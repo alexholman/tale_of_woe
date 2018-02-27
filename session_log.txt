@@ -1,0 +1,990 @@
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Tue Feb 27 02:36:42 2018 from 192.168.1.110
+homeassistant@hassbian:~ $ cd homeassistant
+homeassistant@hassbian:~/homeassistant $ ls
+appdaemon.yaml           dashboards            panels
+apps                     deps                  plex.conf
+apps.yaml                floorplan.yaml        pyozw.sqlite
+automations.yaml         groups.yaml           scripts.yaml
+compiled                 home-assistant.log    secrets.yaml
+configuration.yaml       home-assistant_v2.db  tts
+configuration.yaml.orig  logs                  www
+custom_components        options.xml           zwcfg_0xc55493c3.xml
+customize.yaml           OZW_Log.txt           zwscene.xml
+homeassistant@hassbian:~/homeassistant $ cd ~
+
+...keygen stuff..
+
+homeassistant@hassbian:~/homeassistant $ ls
+appdaemon.yaml           dashboards            panels
+apps                     deps                  plex.conf
+apps.yaml                floorplan.yaml        pyozw.sqlite
+automations.yaml         groups.yaml           scripts.yaml
+compiled                 home-assistant.log    secrets.yaml
+configuration.yaml       home-assistant_v2.db  tts
+configuration.yaml.orig  logs                  www
+custom_components        options.xml           zwcfg_0xc55493c3.xml
+customize.yaml           OZW_Log.txt           zwscene.xml
+homeassistant@hassbian:~/homeassistant $ git init
+Initialized empty Git repository in /home/homeassistant/.homeassistant/.git/
+homeassistant@hassbian:~/homeassistant $ git remote add origin git@github.com:alexholman/home_assistant.git
+homeassistant@hassbian:~/homeassistant $ git push -u origin master
+error: src refspec master does not match any.
+error: failed to push some refs to 'git@github.com:alexholman/home_assistant.git'
+homeassistant@hassbian:~/homeassistant $ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.HA_VERSION
+	.uuid
+	OZW_Log.txt
+	appdaemon.yaml
+	apps.yaml
+	apps/
+	automations.yaml
+	compiled/
+	configuration.yaml
+	configuration.yaml.orig
+	custom_components/
+	customize.yaml
+	dashboards/
+	floorplan.yaml
+	groups.yaml
+	home-assistant.log
+	home-assistant_v2.db
+	options.xml
+	panels/
+	plex.conf
+	pyozw.sqlite
+	scripts.yaml
+	secrets.yaml
+	tts/
+	www/
+	zwcfg_0xc55493c3.xml
+	zwscene.xml
+
+nothing added to commit but untracked files present (use "git add" to track)
+homeassistant@hassbian:~/homeassistant $ ls
+appdaemon.yaml           custom_components   home-assistant_v2.db  scripts.yaml
+apps                     customize.yaml      logs                  secrets.yaml
+apps.yaml                dashboards          options.xml           tts
+automations.yaml         deps                OZW_Log.txt           www
+compiled                 floorplan.yaml      panels                zwcfg_0xc55493c3.xml
+configuration.yaml       groups.yaml         plex.conf             zwscene.xml
+configuration.yaml.orig  home-assistant.log  pyozw.sqlite
+homeassistant@hassbian:~/homeassistant $ git add groups.yaml
+homeassistant@hassbian:~/homeassistant $ git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   groups.yaml
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.HA_VERSION
+	.uuid
+	OZW_Log.txt
+	appdaemon.yaml
+	apps.yaml
+	apps/
+	automations.yaml
+	compiled/
+	configuration.yaml
+	configuration.yaml.orig
+	custom_components/
+	customize.yaml
+	dashboards/
+	floorplan.yaml
+	home-assistant.log
+	home-assistant_v2.db
+	options.xml
+	panels/
+	plex.conf
+	pyozw.sqlite
+	scripts.yaml
+	secrets.yaml
+	tts/
+	www/
+	zwcfg_0xc55493c3.xml
+	zwscene.xml
+
+homeassistant@hassbian:~/homeassistant $ git commit -m 'first file add'
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: empty ident name (for <(null)>) not allowed
+homeassistant@hassbian:~/homeassistant $ git config --global user.email "XXXX@gmail.com"
+homeassistant@hassbian:~/homeassistant $ git config --global user.name "Alex"
+homeassistant@hassbian:~/homeassistant $ git commit -m 'first file add'
+[master (root-commit) f2d890c] first file add
+ 1 file changed, 9 insertions(+)
+ create mode 100644 groups.yaml
+homeassistant@hassbian:~/homeassistant $ git remote add origin git@github.com:alexholman/home_assistant.git
+fatal: remote origin already exists.
+homeassistant@hassbian:~/homeassistant $ git push -u origin master
+The authenticity of host 'github.com (192.30.253.112)' can't be established.
+RSA key fingerprint is SHA256:XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'github.com,192.30.253.112' (RSA) to the list of known hosts.
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 315 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To github.com:alexholman/home_assistant.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+homeassistant@hassbian:~/homeassistant $ ls
+appdaemon.yaml           custom_components   home-assistant_v2.db  scripts.yaml
+apps                     customize.yaml      logs                  secrets.yaml
+apps.yaml                dashboards          options.xml           tts
+automations.yaml         deps                OZW_Log.txt           www
+compiled                 floorplan.yaml      panels                zwcfg_0xc55493c3.xml
+configuration.yaml       groups.yaml         plex.conf             zwscene.xml
+configuration.yaml.orig  home-assistant.log  pyozw.sqlite
+homeassistant@hassbian:~/homeassistant $ cd custom_components/
+homeassistant@hassbian:~/homeassistant/custom_components $ cd climate/
+homeassistant@hassbian:~/homeassistant/custom_components/climate $ ls
+custom_thermostat.py    mitsubishi_mqtt_orig.py  __pycache__
+heatpump_thermostat.py  mitsubishi_mqtt.py
+homeassistant@hassbian:~/homeassistant/custom_components/climate $ cd __pycache__/
+homeassistant@hassbian:~/homeassistant/custom_components/climate/__pycache__ $ ls
+custom_thermostat.cpython-35.pyc  mitsubishi_mqtt.cpython-35.pyc
+homeassistant@hassbian:~/homeassistant/custom_components/climate/__pycache__ $ cd ..
+homeassistant@hassbian:~/homeassistant/custom_components/climate $ ls
+custom_thermostat.py    mitsubishi_mqtt_orig.py  __pycache__
+heatpump_thermostat.py  mitsubishi_mqtt.py
+homeassistant@hassbian:~/homeassistant/custom_components/climate $ ls
+custom_thermostat.py    mitsubishi_mqtt_orig.py  __pycache__
+heatpump_thermostat.py  mitsubishi_mqtt.py
+homeassistant@hassbian:~/homeassistant/custom_components/climate $ find . -name '*.log'
+homeassistant@hassbian:~/homeassistant/custom_components/climate $ cd ../..
+homeassistant@hassbian:~/homeassistant $ git pull
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From github.com:alexholman/home_assistant
+   f2d890c..78577e7  master     -> origin/master
+Updating f2d890c..78577e7
+Fast-forward
+ .gitignore | 115 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 115 insertions(+)
+ create mode 100644 .gitignore
+homeassistant@hassbian:~/homeassistant $ ls
+appdaemon.yaml           custom_components   home-assistant_v2.db  scripts.yaml
+apps                     customize.yaml      logs                  secrets.yaml
+apps.yaml                dashboards          options.xml           tts
+automations.yaml         deps                OZW_Log.txt           www
+compiled                 floorplan.yaml      panels                zwcfg_0xc55493c3.xml
+configuration.yaml       groups.yaml         plex.conf             zwscene.xml
+configuration.yaml.orig  home-assistant.log  pyozw.sqlite
+homeassistant@hassbian:~/homeassistant $ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.HA_VERSION
+	.uuid
+	OZW_Log.txt
+	appdaemon.yaml
+	apps.yaml
+	apps/
+	automations.yaml
+	compiled/
+	configuration.yaml
+	configuration.yaml.orig
+	custom_components/
+	customize.yaml
+	dashboards/
+	floorplan.yaml
+	home-assistant_v2.db
+	options.xml
+	panels/
+	plex.conf
+	pyozw.sqlite
+	scripts.yaml
+	zwcfg_0xc55493c3.xml
+	zwscene.xml
+
+nothing added to commit but untracked files present (use "git add" to track)
+homeassistant@hassbian:~/homeassistant $ git add *
+The following paths are ignored by one of your .gitignore files:
+deps
+home-assistant.log
+secrets.yaml
+tts
+www
+Use -f if you really want to add them.
+
+fatal: unable to stat 'home-assistant_v2.db-shm': No such file or directory
+homeassistant@hassbian:~/homeassistant $ 
+homeassistant@hassbian:~/homeassistant $ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.HA_VERSION
+	.uuid
+	OZW_Log.txt
+	appdaemon.yaml
+	apps.yaml
+	apps/
+	automations.yaml
+	compiled/
+	configuration.yaml
+	configuration.yaml.orig
+	custom_components/
+	customize.yaml
+	dashboards/
+	floorplan.yaml
+	home-assistant_v2.db
+	options.xml
+	panels/
+	plex.conf
+	pyozw.sqlite
+	scripts.yaml
+	zwcfg_0xc55493c3.xml
+	zwscene.xml
+
+nothing added to commit but untracked files present (use "git add" to track)
+homeassistant@hassbian:~/homeassistant $ ls
+appdaemon.yaml           custom_components   home-assistant_v2.db  scripts.yaml
+apps                     customize.yaml      logs                  secrets.yaml
+apps.yaml                dashboards          options.xml           tts
+automations.yaml         deps                OZW_Log.txt           www
+compiled                 floorplan.yaml      panels                zwcfg_0xc55493c3.xml
+configuration.yaml       groups.yaml         plex.conf             zwscene.xml
+configuration.yaml.orig  home-assistant.log  pyozw.sqlite
+homeassistant@hassbian:~/homeassistant $ git add *
+The following paths are ignored by one of your .gitignore files:
+deps
+home-assistant.log
+secrets.yaml
+tts
+www
+Use -f if you really want to add them.
+homeassistant@hassbian:~/homeassistant $ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   OZW_Log.txt
+	new file:   appdaemon.yaml
+	new file:   apps.yaml
+	new file:   apps/hass_apps_loader.py
+	new file:   apps/hello.py
+	new file:   automations.yaml
+	new file:   compiled/css/default/hello_application.css
+	new file:   compiled/html/default/hello_body.html
+	new file:   compiled/html/default/hello_head.html
+	new file:   compiled/javascript/application.js
+	new file:   compiled/javascript/default/hello_init.js
+	new file:   configuration.yaml
+	new file:   configuration.yaml.orig
+	new file:   custom_components/climate/custom_thermostat.py
+	new file:   custom_components/climate/heatpump_thermostat.py
+	new file:   custom_components/climate/mitsubishi_mqtt.py
+	new file:   custom_components/climate/mitsubishi_mqtt_orig.py
+	new file:   custom_components/hello_mqtt.py
+	new file:   custom_components/sensor/ecobee_custom.py
+	new file:   custom_components/sensor/heatpump_temp.py
+	new file:   custom_components/sensor/uptime_custom.py
+	new file:   customize.yaml
+	new file:   dashboards/Hello.dash
+	new file:   floorplan.yaml
+	new file:   home-assistant_v2.db
+	new file:   options.xml
+	new file:   panels/floorplan.html
+	new file:   plex.conf
+	new file:   pyozw.sqlite
+	new file:   scripts.yaml
+	new file:   zwcfg_0xc55493c3.xml
+	new file:   zwscene.xml
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   home-assistant_v2.db
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.HA_VERSION
+	.uuid
+
+homeassistant@hassbian:~/homeassistant $ 
+homeassistant@hassbian:~/homeassistant $ git reset
+homeassistant@hassbian:~/homeassistant $ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.HA_VERSION
+	.uuid
+	OZW_Log.txt
+	appdaemon.yaml
+	apps.yaml
+	apps/
+	automations.yaml
+	compiled/
+	configuration.yaml
+	configuration.yaml.orig
+	custom_components/
+	customize.yaml
+	dashboards/
+	floorplan.yaml
+	home-assistant_v2.db
+	options.xml
+	panels/
+	plex.conf
+	pyozw.sqlite
+	scripts.yaml
+	zwcfg_0xc55493c3.xml
+	zwscene.xml
+
+nothing added to commit but untracked files present (use "git add" to track)
+homeassistant@hassbian:~/homeassistant $ git pull
+Warning: Permanently added the RSA host key for IP address '192.30.253.113' to the list of known hosts.
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (3/3), done.
+Unpacking objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+From github.com:alexholman/home_assistant
+   78577e7..2d4e427  master     -> origin/master
+Updating 78577e7..2d4e427
+Fast-forward
+ .gitignore | 116 ++++++++----------------------------------------------------------------------
+ 1 file changed, 12 insertions(+), 104 deletions(-)
+homeassistant@hassbian:~/homeassistant $ git add *
+The following paths are ignored by one of your .gitignore files:
+deps
+secrets.yaml
+tts
+www
+Use -f if you really want to add them.
+homeassistant@hassbian:~/homeassistant $ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   OZW_Log.txt
+	new file:   appdaemon.yaml
+	new file:   apps.yaml
+	new file:   apps/hass_apps_loader.py
+	new file:   apps/hello.py
+	new file:   automations.yaml
+	new file:   compiled/css/default/hello_application.css
+	new file:   compiled/html/default/hello_body.html
+	new file:   compiled/html/default/hello_head.html
+	new file:   compiled/javascript/application.js
+	new file:   compiled/javascript/default/hello_init.js
+	new file:   configuration.yaml
+	new file:   configuration.yaml.orig
+	new file:   custom_components/climate/custom_thermostat.py
+	new file:   custom_components/climate/heatpump_thermostat.py
+	new file:   custom_components/climate/mitsubishi_mqtt.py
+	new file:   custom_components/climate/mitsubishi_mqtt_orig.py
+	new file:   custom_components/hello_mqtt.py
+	new file:   custom_components/sensor/ecobee_custom.py
+	new file:   custom_components/sensor/heatpump_temp.py
+	new file:   custom_components/sensor/uptime_custom.py
+	new file:   customize.yaml
+	new file:   dashboards/Hello.dash
+	new file:   floorplan.yaml
+	new file:   home-assistant.log
+	new file:   home-assistant_v2.db
+	new file:   options.xml
+	new file:   panels/floorplan.html
+	new file:   plex.conf
+	new file:   pyozw.sqlite
+	new file:   scripts.yaml
+	new file:   zwcfg_0xc55493c3.xml
+	new file:   zwscene.xml
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   home-assistant.log
+	modified:   home-assistant_v2.db
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.HA_VERSION
+	.uuid
+
+homeassistant@hassbian:~/homeassistant $ git push
+Everything up-to-date
+homeassistant@hassbian:~/homeassistant $ git commit -m 'initial add of all files'
+[master 8795b0f] initial add of all files
+ 33 files changed, 7364 insertions(+)
+ create mode 100644 OZW_Log.txt
+ create mode 100644 appdaemon.yaml
+ create mode 100644 apps.yaml
+ create mode 100644 apps/hass_apps_loader.py
+ create mode 100644 apps/hello.py
+ create mode 100644 automations.yaml
+ create mode 100755 compiled/css/default/hello_application.css
+ create mode 100755 compiled/html/default/hello_body.html
+ create mode 100755 compiled/html/default/hello_head.html
+ create mode 100755 compiled/javascript/application.js
+ create mode 100755 compiled/javascript/default/hello_init.js
+ create mode 100644 configuration.yaml
+ create mode 100644 configuration.yaml.orig
+ create mode 100644 custom_components/climate/custom_thermostat.py
+ create mode 100644 custom_components/climate/heatpump_thermostat.py
+ create mode 100755 custom_components/climate/mitsubishi_mqtt.py
+ create mode 100644 custom_components/climate/mitsubishi_mqtt_orig.py
+ create mode 100644 custom_components/hello_mqtt.py
+ create mode 100644 custom_components/sensor/ecobee_custom.py
+ create mode 100644 custom_components/sensor/heatpump_temp.py
+ create mode 100644 custom_components/sensor/uptime_custom.py
+ create mode 100644 customize.yaml
+ create mode 100644 dashboards/Hello.dash
+ create mode 100644 floorplan.yaml
+ create mode 100644 home-assistant.log
+ create mode 100644 home-assistant_v2.db
+ create mode 100644 options.xml
+ create mode 100644 panels/floorplan.html
+ create mode 100644 plex.conf
+ create mode 100644 pyozw.sqlite
+ create mode 100644 scripts.yaml
+ create mode 100644 zwcfg_0xc55493c3.xml
+ create mode 100644 zwscene.xml
+homeassistant@hassbian:~/homeassistant $ git push
+Counting objects: 47, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (38/38), done.
+Writing objects: 100% (47/47), 40.34 MiB | 1.42 MiB/s, done.
+Total 47 (delta 3), reused 1 (delta 0)
+remote: Resolving deltas: 100% (3/3), done.
+remote: error: GH001: Large files detected. You may want to try Git Large File Storage - https://git-lfs.github.com.
+remote: error: Trace: ac5bc866342af9a0eb519ff3eea8f06a
+remote: error: See http://git.io/iEPt8g for more information.
+remote: error: File home-assistant_v2.db is 627.40 MB; this exceeds GitHub's file size limit of 100.00 MB
+To github.com:alexholman/home_assistant.git
+ ! [remote rejected] master -> master (pre-receive hook declined)
+error: failed to push some refs to 'git@github.com:alexholman/home_assistant.git'
+homeassistant@hassbian:~/homeassistant $ nano .gitignore
+homeassistant@hassbian:~/homeassistant $ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   .gitignore
+	modified:   home-assistant.log
+	modified:   home-assistant_v2.db
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.HA_VERSION
+	.uuid
+
+no changes added to commit (use "git add" and/or "git commit -a")
+homeassistant@hassbian:~/homeassistant $ git rm *.db
+error: the following file has local modifications:
+    home-assistant_v2.db
+(use --cached to keep the file, or -f to force removal)
+homeassistant@hassbian:~/homeassistant $ git rm --cached *.db
+rm 'home-assistant_v2.db'
+homeassistant@hassbian:~/homeassistant $ ls home-assistant-assistant_v2.db
+ls: cannot access 'home-assistant-assistant_v2.db': No such file or directory
+homeassistant@hassbian:~/homeassistant $ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	deleted:    home-assistant_v2.db
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   .gitignore
+	modified:   home-assistant.log
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.HA_VERSION
+	.uuid
+
+homeassistant@hassbian:~/homeassistant $ git add *
+The following paths are ignored by one of your .gitignore files:
+deps
+home-assistant_v2.db
+secrets.yaml
+tts
+www
+Use -f if you really want to add them.
+homeassistant@hassbian:~/homeassistant $ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   home-assistant.log
+	deleted:    home-assistant_v2.db
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   .gitignore
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.HA_VERSION
+	.uuid
+
+homeassistant@hassbian:~/homeassistant $ git add .gitignore
+homeassistant@hassbian:~/homeassistant $ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   .gitignore
+	modified:   home-assistant.log
+	deleted:    home-assistant_v2.db
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.HA_VERSION
+	.uuid
+
+homeassistant@hassbian:~/homeassistant $ git commit -m 'removed *.db files'
+[master 817d49b] removed *.db files
+ 3 files changed, 2 insertions(+)
+ delete mode 100644 home-assistant_v2.db
+homeassistant@hassbian:~/homeassistant $ git push
+Counting objects: 51, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (42/42), done.
+Writing objects: 100% (51/51), 40.34 MiB | 1.42 MiB/s, done.
+Total 51 (delta 6), reused 1 (delta 0)
+remote: Resolving deltas: 100% (6/6), completed with 1 local object.
+remote: error: GH001: Large files detected. You may want to try Git Large File Storage - https://git-lfs.github.com.
+remote: error: Trace: 5864ca46a265ee2e23bf6741f5d5a820
+remote: error: See http://git.io/iEPt8g for more information.
+remote: error: File home-assistant_v2.db is 627.40 MB; this exceeds GitHub's file size limit of 100.00 MB
+To github.com:alexholman/home_assistant.git
+ ! [remote rejected] master -> master (pre-receive hook declined)
+error: failed to push some refs to 'git@github.com:alexholman/home_assistant.git'
+homeassistant@hassbian:~/homeassistant $ git reset --hard HEAD~2
+HEAD is now at 2d4e427 Update .gitignore
+homeassistant@hassbian:~/homeassistant $ git log
+commit 2d4e427832f3ac0a4b05c0d2c5486d0fa0370da2
+Author: alexholman <alexholman@users.noreply.github.com>
+Date:   Mon Feb 26 22:08:55 2018 -0500
+
+    Update .gitignore
+
+commit 78577e7b713cc14b322b60acebecf0149227bc91
+Author: alexholman <alexholman@users.noreply.github.com>
+Date:   Mon Feb 26 22:04:45 2018 -0500
+
+    Created .gitignore
+
+commit f2d890c54c2ef169101b5c8556e5ac8176a3ad43
+Author: Alex <aholman@gmail.com>
+Date:   Tue Feb 27 02:59:14 2018 +0000
+
+    first file add
+homeassistant@hassbian:~/homeassistant $ git reset --hard HEAD~2
+HEAD is now at f2d890c first file add
+homeassistant@hassbian:~/homeassistant $ git log
+commit f2d890c54c2ef169101b5c8556e5ac8176a3ad43
+Author: Alex <aholman@gmail.com>
+Date:   Tue Feb 27 02:59:14 2018 +0000
+
+    first file add
+homeassistant@hassbian:~/homeassistant $ ls
+apps  custom_components  deps  groups.yaml  home-assistant_v2.db  logs  secrets.yaml  tts  www
+homeassistant@hassbian:~/homeassistant $ nano .gitignore
+homeassistant@hassbian:~/homeassistant $ nano .gitignore
+homeassistant@hassbian:~/homeassistant $ git status
+On branch master
+Your branch is behind 'origin/master' by 2 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.HA_VERSION
+	.gitignore
+	.uuid
+
+nothing added to commit but untracked files present (use "git add" to track)
+homeassistant@hassbian:~/homeassistant $ git pull
+Updating f2d890c..2d4e427
+error: The following untracked working tree files would be overwritten by merge:
+	.gitignore
+Please move or remove them before you merge.
+Aborting
+homeassistant@hassbian:~/homeassistant $ rm .gitignore 
+homeassistant@hassbian:~/homeassistant $ git pull
+Updating f2d890c..2d4e427
+Fast-forward
+ .gitignore | 23 +++++++++++++++++++++++
+ 1 file changed, 23 insertions(+)
+ create mode 100644 .gitignore
+homeassistant@hassbian:~/homeassistant $ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.HA_VERSION
+	.uuid
+	home-assistant_v2.db
+
+nothing added to commit but untracked files present (use "git add" to track)
+homeassistant@hassbian:~/homeassistant $ less .gitignore 
+homeassistant@hassbian:~/homeassistant $ nano .gitignore
+homeassistant@hassbian:~/homeassistant $ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   .gitignore
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.HA_VERSION
+	.uuid
+
+no changes added to commit (use "git add" and/or "git commit -a")
+homeassistant@hassbian:~/homeassistant $ git add .gitignore 
+homeassistant@hassbian:~/homeassistant $ git commit -m 'added *.db to gitignore'
+[master 63319f8] added *.db to gitignore
+ 1 file changed, 1 insertion(+)
+homeassistant@hassbian:~/homeassistant $ git push
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 315 bytes | 0 bytes/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:alexholman/home_assistant.git
+   2d4e427..63319f8  master -> master
+homeassistant@hassbian:~/homeassistant $ git add *
+The following paths are ignored by one of your .gitignore files:
+deps
+home-assistant_v2.db
+secrets.yaml
+tts
+www
+Use -f if you really want to add them.
+homeassistant@hassbian:~/homeassistant $ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.HA_VERSION
+	.uuid
+
+nothing added to commit but untracked files present (use "git add" to track)
+homeassistant@hassbian:~/homeassistant $ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.HA_VERSION
+	.uuid
+
+nothing added to commit but untracked files present (use "git add" to track)
+homeassistant@hassbian:~/homeassistant $ nano .gitignore 
+homeassistant@hassbian:~/homeassistant $ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   .gitignore
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.HA_VERSION
+	.uuid
+
+no changes added to commit (use "git add" and/or "git commit -a")
+homeassistant@hassbian:~/homeassistant $ git commit -m 'removed ignore all from gitignore'
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+	modified:   .gitignore
+
+Untracked files:
+	.HA_VERSION
+	.uuid
+
+no changes added to commit
+homeassistant@hassbian:~/homeassistant $ git add .gitignore 
+homeassistant@hassbian:~/homeassistant $ git commit -m 'removed ignore all from gitignore'
+[master a7348c6] removed ignore all from gitignore
+ 1 file changed, 1 insertion(+), 4 deletions(-)
+homeassistant@hassbian:~/homeassistant $ git push
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 342 bytes | 0 bytes/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:alexholman/home_assistant.git
+   63319f8..a7348c6  master -> master
+homeassistant@hassbian:~/homeassistant $ git add *
+The following paths are ignored by one of your .gitignore files:
+deps
+home-assistant_v2.db
+secrets.yaml
+tts
+www
+Use -f if you really want to add them.
+homeassistant@hassbian:~/homeassistant $ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.HA_VERSION
+	.uuid
+
+nothing added to commit but untracked files present (use "git add" to track)
+homeassistant@hassbian:~/homeassistant $ git add
+Nothing specified, nothing added.
+Maybe you wanted to say 'git add .'?
+homeassistant@hassbian:~/homeassistant $ ls
+apps  custom_components  deps  groups.yaml  home-assistant_v2.db  logs  secrets.yaml  tts  www
+homeassistant@hassbian:~/homeassistant $ ls
+apps  custom_components  deps  groups.yaml  home-assistant_v2.db  logs  secrets.yaml  tts  www
+homeassistant@hassbian:~/homeassistant $ git log
+commit a7348c6a5711f7270c029727c8610d959e3af254
+Author: Alex <aholman@gmail.com>
+Date:   Tue Feb 27 03:27:14 2018 +0000
+
+    removed ignore all from gitignore
+
+commit 63319f8e69e56b9d98ac9f71b744b83fbed3d214
+Author: Alex <aholman@gmail.com>
+Date:   Tue Feb 27 03:25:15 2018 +0000
+
+    added *.db to gitignore
+
+commit 2d4e427832f3ac0a4b05c0d2c5486d0fa0370da2
+Author: alexholman <alexholman@users.noreply.github.com>
+Date:   Mon Feb 26 22:08:55 2018 -0500
+
+    Update .gitignore
+
+commit 78577e7b713cc14b322b60acebecf0149227bc91
+Author: alexholman <alexholman@users.noreply.github.com>
+Date:   Mon Feb 26 22:04:45 2018 -0500
+
+    Created .gitignore
+
+commit f2d890c54c2ef169101b5c8556e5ac8176a3ad43
+Author: Alex <aholman@gmail.com>
+Date:   Tue Feb 27 02:59:14 2018 +0000
+
+    first file add
+homeassistant@hassbian:~/homeassistant $ git checkout f2d890c54c2ef169101b5c8556e5ac8176a3ad43
+Note: checking out 'f2d890c54c2ef169101b5c8556e5ac8176a3ad43'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b <new-branch-name>
+
+HEAD is now at f2d890c... first file add
+homeassistant@hassbian:~/homeassistant $ ls
+apps  custom_components  deps  groups.yaml  home-assistant_v2.db  logs  secrets.yaml  tts  www
+homeassistant@hassbian:~/homeassistant $ ^C
+homeassistant@hassbian:~/homeassistant $ git checkout a7348c6a5711f7270c029727c8610d959e3af254
+Previous HEAD position was f2d890c... first file add
+HEAD is now at a7348c6... removed ignore all from gitignore
+homeassistant@hassbian:~/homeassistant $ git status
+HEAD detached at a7348c6
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.HA_VERSION
+	.uuid
+
+nothing added to commit but untracked files present (use "git add" to track)
+homeassistant@hassbian:~/homeassistant $ ls
+apps  custom_components  deps  groups.yaml  home-assistant_v2.db  logs  secrets.yaml  tts  www
+homeassistant@hassbian:~/homeassistant $ cd custom_components/
+homeassistant@hassbian:~/homeassistant/custom_components $ ls
+climate  __pycache__  sensor
+homeassistant@hassbian:~/homeassistant/custom_components $ cd climate/
+homeassistant@hassbian:~/homeassistant/custom_components/climate $ ls
+__pycache__
+homeassistant@hassbian:~/homeassistant/custom_components/climate $ cd ..
+homeassistant@hassbian:~/homeassistant/custom_components $ ls
+climate  __pycache__  sensor
+homeassistant@hassbian:~/homeassistant/custom_components $ cd climate/
+homeassistant@hassbian:~/homeassistant/custom_components/climate $ ls
+__pycache__
+homeassistant@hassbian:~/homeassistant/custom_components/climate $ cd ..
+homeassistant@hassbian:~/homeassistant/custom_components $ cd ..
+homeassistant@hassbian:~/homeassistant $ ls
+apps  custom_components  deps  groups.yaml  home-assistant_v2.db  logs  secrets.yaml  tts  www
+homeassistant@hassbian:~/homeassistant $ git checkout master
+Switched to branch 'master'
+Your branch is up-to-date with 'origin/master'.
+homeassistant@hassbian:~/homeassistant $ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.HA_VERSION
+	.uuid
+
+nothing added to commit but untracked files present (use "git add" to track)
+homeassistant@hassbian:~/homeassistant $ ls
+apps  custom_components  deps  groups.yaml  home-assistant_v2.db  logs  secrets.yaml  tts  www
+homeassistant@hassbian:~/homeassistant $ git log
+commit a7348c6a5711f7270c029727c8610d959e3af254
+Author: Alex <aholman@gmail.com>
+Date:   Tue Feb 27 03:27:14 2018 +0000
+
+    removed ignore all from gitignore
+
+commit 63319f8e69e56b9d98ac9f71b744b83fbed3d214
+Author: Alex <aholman@gmail.com>
+Date:   Tue Feb 27 03:25:15 2018 +0000
+
+    added *.db to gitignore
+
+commit 2d4e427832f3ac0a4b05c0d2c5486d0fa0370da2
+Author: alexholman <alexholman@users.noreply.github.com>
+Date:   Mon Feb 26 22:08:55 2018 -0500
+
+    Update .gitignore
+
+commit 78577e7b713cc14b322b60acebecf0149227bc91
+Author: alexholman <alexholman@users.noreply.github.com>
+Date:   Mon Feb 26 22:04:45 2018 -0500
+
+    Created .gitignore
+
+commit f2d890c54c2ef169101b5c8556e5ac8176a3ad43
+Author: Alex <aholman@gmail.com>
+Date:   Tue Feb 27 02:59:14 2018 +0000
+
+    first file add
+homeassistant@hassbian:~/homeassistant $ ^C
+homeassistant@hassbian:~/homeassistant $ git checkout 63319f8e69e56b9d98ac9f71b744b83fbed3d214
+Note: checking out '63319f8e69e56b9d98ac9f71b744b83fbed3d214'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b <new-branch-name>
+
+HEAD is now at 63319f8... added *.db to gitignore
+homeassistant@hassbian:~/homeassistant $ ls
+apps  custom_components  deps  groups.yaml  home-assistant_v2.db  logs  secrets.yaml  tts  www
+homeassistant@hassbian:~/homeassistant $ git log
+commit 63319f8e69e56b9d98ac9f71b744b83fbed3d214
+Author: Alex <aholman@gmail.com>
+Date:   Tue Feb 27 03:25:15 2018 +0000
+
+    added *.db to gitignore
+
+commit 2d4e427832f3ac0a4b05c0d2c5486d0fa0370da2
+Author: alexholman <alexholman@users.noreply.github.com>
+Date:   Mon Feb 26 22:08:55 2018 -0500
+
+    Update .gitignore
+
+commit 78577e7b713cc14b322b60acebecf0149227bc91
+Author: alexholman <alexholman@users.noreply.github.com>
+Date:   Mon Feb 26 22:04:45 2018 -0500
+
+    Created .gitignore
+
+commit f2d890c54c2ef169101b5c8556e5ac8176a3ad43
+Author: Alex <aholman@gmail.com>
+Date:   Tue Feb 27 02:59:14 2018 +0000
+
+    first file add
+homeassistant@hassbian:~/homeassistant $ git checkout 2d4e427832f3ac0a4b05c0d2c5486d0fa0370da2
+Previous HEAD position was 63319f8... added *.db to gitignore
+HEAD is now at 2d4e427... Update .gitignore
+homeassistant@hassbian:~/homeassistant $ ls
+apps  custom_components  deps  groups.yaml  home-assistant_v2.db  logs  secrets.yaml  tts  www
+homeassistant@hassbian:~/homeassistant $ git log
+commit 2d4e427832f3ac0a4b05c0d2c5486d0fa0370da2
+Author: alexholman <alexholman@users.noreply.github.com>
+Date:   Mon Feb 26 22:08:55 2018 -0500
+
+    Update .gitignore
+
+commit 78577e7b713cc14b322b60acebecf0149227bc91
+Author: alexholman <alexholman@users.noreply.github.com>
+Date:   Mon Feb 26 22:04:45 2018 -0500
+
+    Created .gitignore
+
+commit f2d890c54c2ef169101b5c8556e5ac8176a3ad43
+Author: Alex <aholman@gmail.com>
+Date:   Tue Feb 27 02:59:14 2018 +0000
+
+    first file add
+homeassistant@hassbian:~/homeassistant $ git checkout 78577e7b713cc14b322b60acebecf0149227bc91
+Previous HEAD position was 2d4e427... Update .gitignore
+HEAD is now at 78577e7... Created .gitignore
+homeassistant@hassbian:~/homeassistant $ 
